@@ -17,6 +17,15 @@ function addToCart(item) {
  return cart
 }
 
+function getItemKeyAndValue(item) {
+  var itemKeys = Object.keys(item);
+  if (itemKeys.length == 1) {
+    var itemKey = Object.keys(item)[0]
+    var itemVal = item[itemKey]
+    return [itemKey, itemVal]
+  }
+}
+
 function viewCart() {
   var message = 'In your cart, you have'
   var len = cart.length
