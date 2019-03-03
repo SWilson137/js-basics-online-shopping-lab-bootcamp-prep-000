@@ -18,7 +18,30 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  
+  var message = 'In your cart, you have'
+  var len = cart.length
+  var lastIndex = len - 1
+  var item
+  var itemPrice
+  if (len == 0) {
+    message = 'Your shopping cart is empty.'
+  } else if (len == 1) {
+    [item, itemPrice] = getItemKeyAndValue(cart[0])
+    message += ` ${item} at $${itemPrice}.`
+  } else {
+    for (var i = 0; i < len; i++) {
+      [item, itemPrice] = getItemKeyAndValue(cart[i])
+      if (i !== lastIndex) {
+        message += ` ${item} at $${itemPrice},`
+        if (len == 2) {
+          message = message.substring(0, message.length - 1)
+        }
+      } else {
+        message += ` and ${item} at $${itemPrice}.`
+      }
+    }
+  }
+  console.log(message)
 }
 
 function total() {
