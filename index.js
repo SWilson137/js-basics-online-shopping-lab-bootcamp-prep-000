@@ -14,11 +14,11 @@ function addToCart(item) {
  var cartItem = { [item] : price }
  cart = [...cart, cartItem]
  console.log(`${item} has been added to your cart.`)
- 
+ return cart
 }
 
 function viewCart() {
-  // write your code here
+  
 }
 
 function total() {
