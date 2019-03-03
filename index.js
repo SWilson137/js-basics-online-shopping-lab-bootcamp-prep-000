@@ -23,7 +23,7 @@ function viewCart() {
   var lastIndex = len - 1
   var item
   var itemPrice
-  if (len == 0) {
+  if (len === 0) {
     message = 'Your shopping cart is empty.'
   } else if (len == 1) {
     [item, itemPrice] = getItemKeyAndValue(cart[0])
